@@ -15,33 +15,97 @@ a {
 /* cos */
 .section {
   width: 1920px;
-
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  overflow: hidden;
 }
 
 .box-1_wrap {
   border: 1px solid red;
 }
 
+/* head */
 .box-1__head > ul {
   display: flex;
 }
 
-.box-1__head > ul > li > a {
+.box-1__head {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 320px;
+}
+
+.box-1__head .tab-wrapper {
+  overflow: hidden;
+  flex: 1;
+}
+
+.box-1__head .head-btn {
+  cursor: pointer;
+}
+
+.box-1__head ul {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.box-1__head ul > li {
+  flex: 0 0 100px;
+  text-align: center;
+}
+
+.box-1__head ul > li > a {
   padding: 10px;
   display: block;
 }
 
-.box-1__head > ul > li.active > a {
+.box-1__head ul > li.active > a {
   font-weight: bold;
+  color: red;
 }
 
+.box-1__main > ul {
+  position: relative;
+}
 .box-1__main > ul > li {
-  display: none;
+  transform: translateX(10%);
+  transition: transform 0.5s;
 }
 
 .box-1__main > ul > li.active {
-  display: block;
+  transform: translateX(0);
+}
+
+/* main */
+.part-wrap {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.part {
+  width: calc(100% / 3);
+  margin-inline: 10px;
+  display: flex;
+  transition: width 0.3s;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 710px;
+}
+
+.part-1 {
+  background-image: url("https://lh4.googleusercontent.com/proxy/3BbuL-OB-Lwkb3ImCZWXeBksmh-p4pIEuAxukD-ZEbONYIJu3MiN4ggJe6a-yIqrcViUUotuKiNr_YmEDAxW");
+}
+
+.part-2 {
+  background-image: url("https://pimg.mk.co.kr/meet/neds/2021/02/image_readtop_2021_141975_16130341094537743.jpg");
+}
+
+.part-3 {
+  background-image: url("https://images.trvl-media.com/lodging/88000000/87660000/87655100/87655067/5e28ca3a.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill");
+}
+
+.part:hover {
+  width: 70%;
 }
